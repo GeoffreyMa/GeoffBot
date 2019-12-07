@@ -11,19 +11,18 @@
 
     <com.github.library.bubbleview.BubbleTextView
         android:id="@+id/text_message"
-        android:padding="10dp"
-        android:textColor="#FFA"
-
-        android:layout_toRightOf="@+id/chatbot_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:arrowWidth="8dp"
+
+        android:layout_toRightOf="@+id/chatbot_image"
+        android:padding="10dp"
+        android:textColor="#FFA"
         app:angle="10dp"
-        app:arrowHeight="10dp"
-        app:arrowPosition="16dp"
-        app:arrowLocation="left"
         app:arrowCenter="true"
-        app:bubbleColor="@color/colorPrimary"
-        />
+        app:arrowHeight="10dp"
+        app:arrowLocation="left"
+        app:arrowPosition="16dp"
+        app:arrowWidth="8dp"
+        app:bubbleColor="#03A9F4" />
 
 </RelativeLayout>

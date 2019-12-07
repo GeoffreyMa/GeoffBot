@@ -7,14 +7,25 @@
     tools:context=".MainActivity">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
         android:clickable="true"
         android:src="@drawable/ic_send"
-        android:id="@+id/fab"
         android:tint="@android:color/white"
+        app:backgroundTint="#03A9F4" />
+
+    <EditText
+        android:layout_toLeftOf="@+id/fab"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_alignParentStart="true"
+        android:id="@+id/sendMessages"
+        android:hint="Talk to Geoff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
 
     <ListView
         android:id="@+id/listMessages"
@@ -27,16 +38,8 @@
         android:divider="@android:color/transparent"
         android:dividerHeight="0dp"
         android:stackFromBottom="true"
-        android:transcriptMode="alwaysScroll"></ListView>
+        android:transcriptMode="alwaysScroll" />
 
-    <EditText
-        android:layout_toLeftOf="@+id/fab"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/sendMessages"
-        android:hint="Talk to Geoff"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        />
+
 
 </RelativeLayout>

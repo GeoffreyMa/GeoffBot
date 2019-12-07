@@ -38,19 +38,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        listView = (ListView)findViewById(R.id.listMessages);
-        editText = (EditText)findViewById(R.id.sendMessages);
-        floatingActionButton = (FloatingActionButton)findViewById(R.id.fab);
+        listView = findViewById(R.id.listMessages);
+        editText = findViewById(R.id.sendMessages);
+        floatingActionButton = findViewById(R.id.fab);
 
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String text = editText.getText().toString();
-                ChatModel model = new ChatModel(text,true); //Usuario envia message
+                ChatModel model = new ChatModel(text,true); //send message
                 list_chat.add(model);
                 new SimsimiAPI().execute(list_chat);
 
-                //Eliminar mensajes de usuario
+                //add text to the message.
                 editText.setText("");
             }
         });
@@ -60,12 +60,9 @@ public class MainActivity extends AppCompatActivity {
 
 
         List<ChatModel> models;
-        String text = editText.getText().toString();
 
         @Override
         protected String doInBackground(List<ChatModel>... params) {
-            String response = null;
-            String url = "https://wsapi.simsimi.com/190410/talk";
             models = params [0];
             HttpDataHandler httpDataHandler = new HttpDataHandler(queue);
             try {
@@ -81,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(String s) {
             System.out.println(s);
 
-            ChatModel chatModel = new ChatModel(s,false); //simsimi
+            ChatModel chatModel = new ChatModel(s,false);
             models.add(chatModel);
             CustomAdapter adapter = new CustomAdapter(models,getApplicationContext());
             listView.setAdapter(adapter);
