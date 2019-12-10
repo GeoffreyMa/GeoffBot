@@ -72,7 +72,7 @@ public class HttpDataHandler {
             @Override
             public Map<String, String> getHeaders(){
                 HashMap<String, String> headers = new HashMap<>();
-                headers.put("x-api-key", "hObnkzCI9uspVRJ2RZFfQ0lUb0u7iEWqmSH7L1EU");
+                        headers.put("x-api-key", "WeW1WytH1m3xBriWqtVC2TCpq2+aPjr2jNBsP3aA");
                 return headers;
             }
         };
